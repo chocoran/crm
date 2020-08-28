@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         id="WebApp_ID" version="2.5">
+    <display-name>crm</display-name>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <filter>
+        <filter-name>EncodeFilter</filter-name>
+        <filter-class>com.zlz.crm.filter.EncodeFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodeFilter</filter-name>
+        <url-pattern>*.do</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>com.zlz.crm.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>*.do</url-pattern>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>com.zlz.crm.listener.DicListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>UserController</servlet-name>
+        <servlet-class>com.zlz.crm.setting.controller.UserController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserController</servlet-name>
+        <url-pattern>/setting/user/login.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ActivityController</servlet-name>
+        <servlet-class>com.zlz.crm.workbench.controller.ActivityController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ActivityController</servlet-name>
+        <url-pattern>/workbench/activity/getUsers.do</url-pattern>
+        <url-pattern>/workbench/activity/save.do</url-pattern>
+        <url-pattern>/workbench/activity/pageList.do</url-pattern>
+        <url-pattern>/workbench/activity/delete.do</url-pattern>
+        <url-pattern>/workbench/activity/edit.do</url-pattern>
+        <url-pattern>/workbench/activity/editSave.do</url-pattern>
+        <url-pattern>/workbench/activity/detail.do</url-pattern>
+        <url-pattern>/workbench/activity/getRemarks.do</url-pattern>
+        <url-pattern>/workbench/activity/removeRemark.do</url-pattern>
+        <url-pattern>/workbench/activity/editRemark.do</url-pattern>
+        <url-pattern>/workbench/activity/saveRemark.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClueController</servlet-name>
+        <servlet-class>com.zlz.crm.workbench.controller.ClueController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClueController</servlet-name>
+        <url-pattern>/workbench/clue/getUsers.do</url-pattern>
+        <url-pattern>/workbench/clue/getSelects.do</url-pattern>
+        <url-pattern>/workbench/clue/getClues.do</url-pattern>
+        <url-pattern>/workbench/clue/saveClue.do</url-pattern>
+        <url-pattern>/workbench/clue/clueDetail.do</url-pattern>
+        <url-pattern>/workbench/clue/getActivity.do</url-pattern>
+        <url-pattern>/workbench/clue/removeRelation.do</url-pattern>
+        <url-pattern>/workbench/clue/showActivity.do</url-pattern>
+        <url-pattern>/workbench/clue/saveRelation.do</url-pattern>
+        <url-pattern>/workbench/clue/showActivityForRelation.do</url-pattern>
+        <url-pattern>/workbench/clue/saveTran.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CustomerController</servlet-name>
+        <servlet-class>com.zlz.crm.workbench.controller.CustomerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerController</servlet-name>
+        <url-pattern>/workbench/customer/showCustomer.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ContactsController</servlet-name>
+        <servlet-class>com.zlz.crm.workbench.controller.ContactsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContactsController</servlet-name>
+        <url-pattern>/workbench/contacts/showContacts.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TranController</servlet-name>
+        <servlet-class>com.zlz.crm.workbench.controller.TranController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TranController</servlet-name>
+        <url-pattern>/workbench/tran/showTran.do</url-pattern>
+        <url-pattern>/workbench/tran/toDetail.do</url-pattern>
+        <url-pattern>/workbench/tran/getActivity.do</url-pattern>
+        <url-pattern>/workbench/tran/getContacts.do</url-pattern>
+        <url-pattern>/workbench/tran/getUser.do</url-pattern>
+        <url-pattern>/workbench/tran/getCustomerName.do</url-pattern>
+        <url-pattern>/workbench/tran/getPossibility.do</url-pattern>
+        <url-pattern>/workbench/tran/saveTran.do</url-pattern>
+        <url-pattern>/workbench/tran/getRemark.do</url-pattern>
+        <url-pattern>/workbench/tran/deleteRemark.do</url-pattern>
+        <url-pattern>/workbench/tran/addRemark.do</url-pattern>
+        <url-pattern>/workbench/tran/editTran.do</url-pattern>
+        <url-pattern>/workbench/tran/toEdit.do</url-pattern>
+        <url-pattern>/workbench/tran/getHistory.do</url-pattern>
+    </servlet-mapping>
+</web-app>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

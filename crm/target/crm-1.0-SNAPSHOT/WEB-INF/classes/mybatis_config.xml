@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 读取properties数据库配置信息 -->
+    <properties resource="jdbc.properties"/>
+    <!-- 控制mybatis的全局行为 -->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <typeAliases>
+    <package name="com.zlz.crm.setting.domain"/>
+    <package name="com.zlz.crm.workbench.domain"/>
+    </typeAliases>
+    <environments default="crm">
+        <environment id="crm">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- sql映射文件的位置 -->
+    <mappers>
+        <package name="com.zlz.crm.setting.dao"/>
+        <package name="com.zlz.crm.workbench.dao"/>
+    </mappers>
+</configuration>
